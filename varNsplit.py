@@ -11,3 +11,18 @@ def split(x, y):
     print("Shape of y_test:", y_test.shape)
 
     return x_train, x_test, y_train, y_test
+
+def modelVariables(x_train, x_test, y_train, y_test, tokens):
+    token_eng, token_hindi = tokens
+    max_length_input = x_train.shape[1]
+    max_length_output = y_train.shape[1]
+    input_vocab_size = len(token_eng.word_index) + 1
+    output_vocab_size = len(token_hindi.word_index) + 1
+
+    print("max_length_input:", max_length_input)
+    print("max_length_output:", max_length_output)
+    print("input_vocab_size:", input_vocab_size)
+    print("output_vocab_size:", output_vocab_size)
+
+    return max_length_input, max_length_output, input_vocab_size, output_vocab_size
+
